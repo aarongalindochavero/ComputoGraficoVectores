@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string>
 #include <cmath>
+#include "Matriz.h"
+#include "Vector.h"
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;

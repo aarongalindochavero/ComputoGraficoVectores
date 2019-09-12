@@ -1,46 +1,49 @@
 #pragma once
-#include <iostream>
-
-#ifndef  MATRIZ_H
-#define MATRIZ_H
-
-#include <vector>
+#include<vector>
 #include "Vector.h"
+#include <math.h>
+#include <cmath>
+#include <iostream>
+#ifndef Matriz_H
+#define Matriz_H
+
 class Matriz
 {
+protected:
+	std::vector<std::vector<float>> mat;
+
 private:
-	std::vector<std::vector<float> >mat;
 	unsigned rows;
 	unsigned cols;
 
 public:
 	Matriz();
 	Matriz(unsigned rows, unsigned cols);
-	/*Matriz(Matriz& rhs);*/
+
+	Matriz(const Matriz& rhs);
 	virtual ~Matriz();
 
-	Matriz& operator= (Matriz&);
-	Matriz& operator+ (Matriz&);
-	//Matriz& operator- (Matriz&);
-	//Matriz& operator* (Matriz&);
-	Matriz transpose();
+	unsigned getRows() const;
+	unsigned getCols() const;
 
-	////multiplicacion por escalar
-	//Matriz operator+(float&);
-	//Matriz operator-(float&);
-	//Matriz operator*(float&);
-	//Matriz operator/(float&);
+	Matriz& operator=(Matriz);
+	Matriz operator+(Matriz&);
+	Matriz operator-(Matriz&);
+	Matriz operator*(Matriz&);
 
-	////multiplicacion por vector
-	//Vector operator*(const Vector&);
+	Matriz transpuesta();
+	Matriz identidad();
+
+	Matriz operator+(float&);
+	Matriz operator-(float&);
+	Matriz operator*(float&);
+	Matriz operator/(float&);
+	Vector operator*(const Vector&);
+
 	float& operator()(const unsigned&, const unsigned&);
-
 	void print();
-
-	
-
-	unsigned getRows();
-	unsigned getCols();
+	void modificarMatriz();
+	void vectorEnMatriz(Vector&, Vector&);
 };
 
-#endif // ! MATRIZ_H
+#endif // !Matriz_H

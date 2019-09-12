@@ -1,15 +1,34 @@
 #pragma once
+#include<cmath>
+#include <iostream>
+
 class Vector
 {
 public:
-	int x, y;
+	float x, y, z;
+
 	Vector();
-	Vector(int, int);
-	Vector operator + (Vector);
-	Vector operator - (Vector);
-	float operator * (Vector);
-	Vector operator * (float);
-	Vector operator = (Vector);
 	~Vector();
+
+	Vector(float, float);
+	Vector(float, float, float);
+
+	float productoPunto(const Vector& vector2);
+	float magnitud();
+	void vectorNormal();
+
+	Vector productoCruz(const Vector& vector2);
+	Vector operator+(const Vector vector2);
+	Vector operator-(const Vector vector2);
+	Vector operator*(float numero);
+	Vector operator/(float numero);
+	Vector operator=(const Vector vector2);
+
+	void setValues(int, int, int);
+
+	void Print(); 
+	void ModifyVector();
+
+
 };
 

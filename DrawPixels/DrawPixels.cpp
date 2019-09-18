@@ -174,7 +174,7 @@ int main(int argc, char* args[])
 			}
 
 			
-			std::cout << "Que quieres hacer?\n1. dibujar circulo\n2. operaciones con vectores y matrices\n3. curva de bezier\n4. algoritmo de Bresenham\n5. salir\n";
+			std::cout << "Que quieres hacer?\n1: dibujar circulo\n2: operaciones con vectores y matrices\n3: curva de bezier\n4: algoritmo de Bresenham\n5: salir\n";
 			std::cin >> opc;
 
 				switch (opc) {
@@ -231,7 +231,7 @@ void pruebaDeMatrices()
 	printf("\n");
 	drawPixel(vector2.x, vector2.y);
 
-	printf("lo quieres en matriz?\nSi = 0\nNo = 1\n");
+	printf("lo quieres en matriz?\n0: Si\n1: No\n");
 	int respuesta;
 	cin >> respuesta;
 	switch (respuesta)
@@ -334,8 +334,8 @@ void operacionesEntreVectores(Vector& vec1, Vector& vec2) {
 	vec1.z = 1;
 	vec2.z = 1;
 
-	printf("Ahora, que quieres hacer con ellos?.\nSumar = 0\nRestar = 1\nProducto Cruz = 2\nProducto Punto = 3\nEscalar = 4\nDividir = 5\nPendiente =  6\n"
-		"DDA = 7\nTrasladar = 8\nEscalar = 9\nRotacion = 10\n\n");
+	printf("Ahora, que quieres hacer con ellos?.\n0: Sumar\n1: Restar\n2: Producto Cruz\n3: Producto Punto\n4: Escalar\n5: Dividir\n6: Pendiente\n"
+		"7: DDA\n8: Trasladar\n9: Escalar\n10: Rotacion\n\n");
 
 	int respuesta; cin >> respuesta;
 
